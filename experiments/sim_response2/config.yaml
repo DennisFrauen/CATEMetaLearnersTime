@@ -1,0 +1,39 @@
+data:
+  name: "sim_response2"
+  n_train: 10000
+  n_val: 1000
+  n_test: 1000
+  p: 1
+  T: 5
+  weights_xx: [0.0, 0.5]
+  weights_ax: [0.0, 0]
+  weights_yx: [0.0, 0]
+  weights_xa: [0.0, 0.5]
+  weights_aa: [0.0, 0.5]
+  weights_ya: [0.0, 0]
+  weights_xy: [0.0, 1]
+  weights_ay: [0.0, 0.5]
+  weights_yy: [0.0, 0]
+  noise_x: 1
+  noise_a: 0.5
+  noise_y: 0.3
+
+run:
+  name: "sim_response2"
+  seed: 0
+  logging: True
+  plotting: False
+  scale: True
+  n_runs: 5 # number of runs with different random seeds
+  run_start_index: 1 # index of first run, used to continue runs
+  interventions:
+    a: [0, 0, 1]
+    b: [1, 0, 0]
+  learners: ["piha", "pira", "ra", "ipw", "dr", "ivwdr"]    #Meta-learners to be trained (piha, pira, ra, ipw, dr, ivwdr)
+  #learners: ["ipw", "pira"]    #Meta-learners to be trained (piha, pira, ra, ipw, dr, ivwdr)
+  train_propensity: False
+  train_response_functions: False
+  train_history_adjustments: False
+  train_meta_learners: False
+
+

@@ -1,0 +1,10 @@
+d_model: 30
+num_heads: 3
+num_encoder_layers: 1
+dim_feedforward: 20
+dropout: 0.1
+dim_output_hidden_units: 20
+lr: 0.001
+epochs: 100
+batch_size: 64
+l2_reg: 0
